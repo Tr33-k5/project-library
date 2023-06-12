@@ -10,7 +10,50 @@
 </head>
 
 <body>
+   <header>
+      <nav>
+         <h1 class="brand-name">project library</h1>
+      </nav>
+   </header>
+   <main>
+      <section class="bookshelf">
+         <div class="book">
+            <h2 class="book-title">book1 title</h2>
+            <p class="book-author">book1 author</p>
+            <p class="book-pages">book1 pages</p>
+            <div class="switch-container">
+               <label>Read : </label>
+               <label class="book-read-switch">
+                  <input type="checkbox">
+                  <span class="slider"></span>
+               </label>
+            </div>
+            <input type="submit" class="remove-btn" value="X">
+         </div>
 
+         <div class="book">
+            <h2 class="book-title">book2 title</h2>
+            <p class="book-author">book2 author</p>
+            <p class="book-pages">book2 pages</p>
+            <div class="switch-container">
+               <label>Read : </label>
+               <label class="book-read-switch">
+                  <input type="checkbox" checked>
+                  <span class="slider"></span>
+               </label>
+            </div>
+            <input type="submit" class="remove-btn" value="X">
+         </div>
+      </section>
+      <section class="button-section">
+         <input type="submit" name="addBtn" value="+" class="add-book-btn">
+      </section>
+   </main>
+   <footer>
+      <p>
+         Copyright c 2023 tr33-k5
+      </p>
+   </footer>
 </body>
 
 </html>
