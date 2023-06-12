@@ -3,3 +3,104 @@
    padding: 0;
    outline: 1px red solid;
 }
+
+html,
+body {
+   height: 100%;
+}
+
+body {
+   display: grid;
+   grid: 50px auto 30px / auto;
+}
+
+header {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+main {
+   display: grid;
+   grid: auto 20% / auto;
+}
+
+.bookshelf {
+   margin: 50px;
+   padding: 30px 80px;
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+   flex-wrap: wrap;
+}
+
+.book {
+   margin: 10px;
+   padding: 10px;
+   min-height: 200px;
+   min-width: 250px;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.book-title {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.book-author {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.book-pages {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.switch-container {
+   padding: 0 20px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.book-read-switch {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.remove-btn {
+   position: absolute;
+   top: -10px;
+   right: -10px;
+   height: 30px;
+   width: 30px;
+   border: 2px solid black;
+   border-radius: 15px;
+}
+
+.button-section {
+   display: flex;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.add-book-btn {
+   height: 60px;
+   width: 380px;
+   min-width: 200px;
+   border-radius: 15px;
+}
+
+footer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
