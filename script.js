@@ -20,7 +20,7 @@ myLibrary.forEach(book => {
    let index = myLibrary.indexOf(book);
    let newBook = document.createElement('div');
    newBook.classList.add('book');
-   newBook.setAttribute('id', 'book' + index);
+   newBook.setAttribute('id', 'book' + (index + 1));
 
    let bookTitle = document.createElement('h2');
    bookTitle.classList.add('book-title');
@@ -50,7 +50,6 @@ myLibrary.forEach(book => {
 
    let input = document.createElement('input');
    input.setAttribute('type', 'checkbox');
-   input.setAttribute('id', 'cb' + index);
    input.checked = book.read;
    labelSwitch.appendChild(input);
    let span = document.createElement('span');
@@ -61,17 +60,17 @@ myLibrary.forEach(book => {
    removebtn.setAttribute('type', 'submit');
    removebtn.setAttribute('value', 'X');
    removebtn.classList.add('remove-btn', 'button');
-   removebtn.setAttribute('id', 'rmvBtn' + index);
    switchContainer.appendChild(removebtn);
 
    books.appendChild(newBook);
 
+   // Remove book when remove-btn clicked
    removebtn.addEventListener('click', () => {
-      console.log(myLibrary.toString);
-
       myLibrary.splice(index, 1);
       newBook.remove();
-
-      console.log(myLibrary.toString);
+   })
+   // Change book.read value when checkbox state clicked
+   input.addEventListener('change', () => {
+      myLibrary[index].read = input.checked;
    })
 });
