@@ -1,4 +1,5 @@
-let myLibrary = [];
+const booksDOM = document.getElementById('bookshelf');
+const booksArray = [];
 
 function Book(title, author, pages, read) {
    this.title = title,
@@ -9,15 +10,14 @@ function Book(title, author, pages, read) {
 }
 
 const theHobbit = new Book('The Hobbit', 'J.R.R Tolkien', 295, false);
-myLibrary.push(theHobbit);
-
 const lesMiserables = new Book('Les Misérables', 'Victor Hugo', 295, true);
-myLibrary.push(lesMiserables);
 
-const books = document.getElementById('bookshelf');
+booksArray.push(theHobbit);
+booksArray.push(lesMiserables);
 
-myLibrary.forEach(book => {
-   let index = myLibrary.indexOf(book);
+const displayBooks = (bookshelfDOM, bookshelfArray, book) => {
+   /* addBook();*/
+   let index = bookshelfArray.indexOf(book);
    let newBook = document.createElement('div');
    newBook.classList.add('book');
    newBook.setAttribute('id', 'book' + (index + 1));
@@ -60,17 +60,36 @@ myLibrary.forEach(book => {
    removebtn.setAttribute('type', 'submit');
    removebtn.setAttribute('value', 'X');
    removebtn.classList.add('remove-btn', 'button');
+   removebtn.setAttribute('id', 'rmvBtn' + (index + 1));
    switchContainer.appendChild(removebtn);
 
-   books.appendChild(newBook);
+   bookshelfDOM.appendChild(newBook);
 
-   // Remove book when remove-btn clicked
-   removebtn.addEventListener('click', () => {
-      myLibrary.splice(index, 1);
-      newBook.remove();
-   })
-   // Change book.read value when checkbox state clicked
+   // Event Listener for remove-button
+   removebtn.addEventListener('click', (e) => {
+      removeBook(booksArray, newBook, index, e);
+   });
+
+   // Event Listener for read-checkbox
    input.addEventListener('change', () => {
-      myLibrary[index].read = input.checked;
-   })
+      console.log(booksArray[index].read);
+      booksArray[index].read = input.checked;
+      console.log(booksArray[index].read);
+   });
+}
+
+booksArray.forEach(bookElement => {
+   displayBooks(booksDOM, booksArray, bookElement);
 });
+
+const removeBook = (bookshelfArray, book, bookshelfArrayIndex, event) => {
+   bookshelfArray.splice(bookshelfArrayIndex, 1);
+   book.remove();
+   event.preventDefault();
+}
+
+const addBook = () => {
+   /* create new Book object */
+   /* insert Book into BooksArray */
+   /* display the book to the DOM */
+}
