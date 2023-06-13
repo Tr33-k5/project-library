@@ -36,11 +36,11 @@ main {
    display: flex;
    flex-direction: column;
    justify-content: flex-start;
-   gap: 30%;
+   gap: 200px;
    background-color: rgb(240, 240, 240);
 }
 
-.bookshelf {
+.books {
    padding: 30px 80px;
    display: flex;
    justify-content: flex-start;
